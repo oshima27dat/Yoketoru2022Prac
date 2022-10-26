@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
     [Tooltip("‘¬‚³"), SerializeField]
     float speed = 20;
 
-    float cameraDistance;
-    Rigidbody rb;
+    float cameraDistance = 0;
+    Rigidbody rb = null;
 
     private void Awake()
     {
@@ -21,8 +21,7 @@ public class Player : MonoBehaviour
     {
         if (collision.collider.CompareTag("Enemy"))
         {
-            SceneManager.LoadScene("Gameover", LoadSceneMode.Additive);
-            Time.timeScale = 0;
+            GameManager.ToGameover();
         }
     }
 
