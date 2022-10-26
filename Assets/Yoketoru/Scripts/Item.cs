@@ -4,24 +4,17 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [SerializeField]
+    int point = 100;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
+            TinyAudio.PlaySE(TinyAudio.SE.Item);
+            GameManager.AddPoint(point);
             Destroy(gameObject);
+
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
