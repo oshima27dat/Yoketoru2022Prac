@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         var wp = Camera.main.ScreenToWorldPoint(mpos);
         
         //to.main
-        transform.position = wp;
+        //transform.position = wp;
         //
         Vector3 to = wp - transform.position;
 
